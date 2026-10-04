@@ -12,15 +12,15 @@
 
 ### GitHub Pages
 
-准备使用 GitHub 仓库 `zhishiren/ananqi-1886-card-game`。发布源选择 `main` 分支的根目录 `/`，根目录已添加 `.nojekyll`，直接发布现有静态文件。
+使用 GitHub 仓库 `zhishiren/ananqi-1886-card-game`。发布源为 `main` 分支的根目录 `/`，根目录已添加 `.nojekyll`，直接发布现有静态文件。
 
-预期页面地址为 https://zhishiren.github.io/ananqi-1886-card-game/ 。这个地址只有在 GitHub Pages 首次部署成功后才可用。
+页面地址为 https://zhishiren.github.io/ananqi-1886-card-game/ 。
 
 后续更新推送至 GitHub 的 `main` 分支即可触发重新发布。Gitee 仓库仍作为原有代码存档，两个平台之间不自动同步。
 
 将本仓库根目录作为站点发布目录，构建命令留空，并完整上传 HTML、CSS、JS 和 assets 文件夹。无需 SPA 路由重写，本项目使用 hash 导航。
 
-公开上线前需选择托管服务和对应账号，本仓库未配置或声称已完成其他平台部署。
+GitHub Pages 以外的托管服务尚未配置。
 
 ## 本地访问
 

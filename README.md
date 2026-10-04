@@ -6,9 +6,11 @@
 
 ## 打开完整页面
 
+[在线体验：安那其1886卡牌游戏](https://zhishiren.github.io/ananqi-1886-card-game/#roster)
+
 下载仓库后，双击根目录的 `index.html`，即可体验完整页面。也可在仓库目录运行 `python3 -m http.server 1887`，然后访问 http://127.0.0.1:1887/#roster 。
 
-Gitee 仓库首页展示的是截图，不能执行页面交互。Gitee 官方已将 Pages 标注为下线；在线网页需要部署到其他静态托管服务，说明见 [部署文档](DEPLOYMENT.md)。
+在线页面由 GitHub Pages 托管。Gitee 仓库首页展示截图并保存代码；部署方式见 [部署文档](DEPLOYMENT.md)。
 
 ## 项目文件
 
