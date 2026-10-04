@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171916">
+  <title>1886 — 阵营卡牌游戏</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23a94d37'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='42' fill='%23f6eddc'%3EⅣ%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=unified-v1">
+  <script src="data.js?v=unified-v1" defer></script>
+  <script src="review-data.js" defer></script>
+  <script src="app.js?v=unified-v1" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#roster" aria-label="1886 首页"><span class="brand-seal">Ⅳ</span><span>1886<small>阵营卡牌游戏</small></span></a>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-view="roster">角色图鉴</button>
+      <button class="nav-item" data-view="arena">对局练习</button>
+      <button class="nav-item" data-view="review">设计分析<span class="nav-dot"></span></button>
+      <button class="nav-item" data-view="rules">规则手册</button>
+    </nav>
+    <div class="version"><span></span>本地预览 <b>v0.1</b></div>
+  </header>
+  <main>
+    <section id="view-roster" class="view active" aria-label="角色图鉴">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span>THE CHRONICLES OF 1886</div>
+          <h1>十二个席位，<br>三方<span>角力。</span></h1>
+          <p>反抗者凝聚同伴，权威者掌控资源。<br>群众之间，隐藏着下一位继任者。</p>
+          <button class="primary" data-view="arena">进入对局练习 <span>↗</span></button>
+          <a class="text-link" href="#review">查看设计分析 →</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span class="hero-year">1886</span>
+          <div class="mini-card mini-left" data-faction="authority"><img data-role-art="police" alt=""><div>权威 <span>军警</span></div></div>
+          <div class="mini-card mini-right" data-faction="people"><img data-role-art="worker" alt=""><div>群众 <span>工农</span></div></div>
+          <div class="mini-card mini-front" data-faction="resist"><div class="mini-top">反 抗 <span>◆ ◆ ◆ ◆</span></div><img data-role-art="mentor" alt=""><div class="mini-name">导师<small>鼓舞 · 遗志</small></div></div>
+          <span class="art-caption">立场之间，皆有选择。</span>
+        </div>
+        <div class="hero-stats"><div><strong>10</strong><span>角色类型</span></div><div><strong>30</strong><span>技能设定</span></div><div><strong>12</strong><span>完整局席位</span></div><p>基于你的原始设计<br>1886.xlsx</p></div>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow">CHARACTER ARCHIVE</div><h2>选择你的立场</h2></div><p>每个角色，都是一种不同的博弈方式。</p></div>
+      <div class="roster-tools">
+        <div class="faction-tabs" aria-label="阵营筛选">
+          <button class="filter active" data-filter="all">全部角色 <span>10</span></button>
+          <button class="filter" data-filter="resist"><i class="dot resist"></i>反抗 <span>3</span></button>
+          <button class="filter" data-filter="people"><i class="dot people"></i>群众 <span>4</span></button>
+          <button class="filter" data-filter="authority"><i class="dot authority"></i>权威 <span>3</span></button>
+          <button class="filter" data-filter="favorites">收藏</button>
+        </div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="role-search" type="search" placeholder="搜索角色或技能" aria-label="搜索角色或技能"><kbd>/</kbd></label>
+      </div>
+      <div id="roster-grid" class="roster-grid"></div>
+      <div id="roster-empty" class="empty" hidden>没有找到角色。试试其他名称或技能。</div>
+      <div class="roster-foot"><span id="roster-count"></span><span>点击卡牌查看技能 · 潜伏者初始属于群众 · 工农有 3 个席位</span></div>
+      <div class="editor-note"><span>设计札记</span><p>角色的协作关系已经成形。先补齐继任、响应与资源流转，再用实战检验强度。</p><button data-view="review">阅读 8 项分析 ↗</button></div>
+    </section>
+
+    <section id="view-review" class="view" aria-label="设计分析" hidden>
+      <div class="page-heading"><div class="eyebrow">DESIGN NOTES / 01</div><h1>让每一次出牌，<br><span>都有清楚的结果。</span></h1><p>以下是基于原稿的规则审读与试改建议。没有实战数据，因此不使用虚构胜率或强度评分。</p></div>
+      <div class="review-intro"><div><small>值得保留</small><h3>角色分工与继任机制</h3><p>导师的支援、工会的续航、刺客的追击，以及群众中隐藏继任者的关系，都有独立的游戏价值。</p></div><div><small>优先处理</small><h3>规则闭合，再测资源差</h3><p>先定义死亡与继任顺序、重复技能和点数结算，再测征税、赎罪券的目标数量。</p></div><div><small>原稿与建议</small><h3>每条判断都可回查</h3><p>以“角色与技能表”为主依据。Sheet1 中已有一份建议稿，作为参考文本，与原始设定分开阅读。</p></div></div>
+      <div class="review-filter" aria-label="分析分类"><button class="active" data-issue-filter="all">全部分析</button><button data-issue-filter="规则缺口">规则缺口</button><button data-issue-filter="优先实测">优先实测</button><button data-issue-filter="观察保留">观察保留</button></div>
+      <div id="issues-list"></div>
+      <div class="callout"><h3>怎样开展第一轮测试</h3><p>固定 12 人配置、两副去王牌和一份临时规则，先进行 5–10 局体验测试。记录每局时长、各阵营胜负、征税/赎罪券造成的失牌与失血、有效治疗量、继任时机、规则争议与工农参与感。这只能暴露问题，不能据此认定已平衡。</p><p>原表 Sheet1 有 40 个单元格缓存显示 #NAME?，包含误作公式的条目。角色与技能主表可读；原文件保持原样。</p></div>
+    </section>
+
+    <section id="view-rules" class="view" aria-label="规则手册" hidden>
+      <div class="page-heading compact"><div class="eyebrow">RULEBOOK / 02</div><h1>从一张牌开始。</h1><p>原稿的玩法骨架，以及供这次预览使用的明确假设。</p></div>
+      <div class="rule-layout">
+        <div>
+          <div class="section-heading"><h2>四类基础牌</h2><span class="muted">其他 J / Q 用于技能</span></div>
+          <div class="basic-cards"><div><span class="suit red">3 · 5 · 7 · 9</span><strong>斗</strong><p>每回合主动使用一次。<br>防牌需要比较点数。</p></div><div><span class="suit">2 · 4 · 6 · 8 · 10</span><strong>防</strong><p>响应对方的斗。<br>预览按防 ≥ 斗结算。</p></div><div><span class="suit">K</span><strong>决斗</strong><p>双方各出一张斗比大小。<br>同点与无牌处理需定稿。</p></div><div><span class="suit red">A</span><strong>救援</strong><p>可用于自己与他人。<br>回复上限为最大生命。</p></div></div>
+          <div class="rule-block"><h3>原稿中的胜利条件</h3><p><b>反抗与工农：</b>权威阵营全部死亡，且至少一名非潜伏群众存活。</p><p><b>权威：</b>反抗阵营全部死亡。</p><p><b>潜伏者：</b>神棍继任教会，密探继任军警，工贼继任资佬。转化后的胜利细则与结算顺序待定。</p><small>来源：角色与技能表!C45:C54。若所有真实工农先死亡，原稿没有给出完整后续胜负处理。</small></div>
+          <div class="rule-block"><h3>完整局的席位</h3><div class="seat-distribution"><span>反抗 ×3</span><span>权威 ×3</span><span>工农 ×3</span><span>潜伏者 ×3</span></div><p>10 种角色中，工农有 3 人，由此推得 12 席。原稿所有角色生命均为 4；普通手牌上限 5，资佬 10。初始手牌不等于手牌上限。</p><small>来源：角色与技能表!B2:L11、C48、C56。</small></div>
+          <div class="rule-block"><h3>建议采用的回合流程</h3><div class="phase-flow"><span>回合开始</span><b>→</b><span>摸牌</span><b>→</b><span>出牌 / 响应</span><b>→</b><span>弃牌</span><b>→</b><span>回合结束</span></div><p>每回合摸 2 张、初始 4 张、两副去王牌是测试建议，不是主表已经明确的规则。濒死、距离、弃牌堆洗回、联合技参与资格仍需统一。</p></div>
+        </div>
+        <aside class="number-lab"><div class="eyebrow">CARD LAB</div><h3>斗与防，试一试</h3><p>拖动点数，查看单张防的结算。</p><label for="attack-range">斗的点数 <output id="attack-output">7</output></label><input id="attack-range" type="range" min="3" max="9" step="2" value="7"><label for="defense-range">防的点数 <output id="defense-output">6</output></label><input id="defense-range" type="range" min="2" max="10" step="2" value="6"><div class="number-result" id="number-result" aria-live="polite"></div><p class="lab-note">临时规则：防 ≥ 斗。<br>选择防 2，可以看到它目前的局限。</p><hr><h4>两副去王牌：104 张</h4><div class="deck-counts"><span>斗 <b>32</b></span><span>防 <b>40</b></span><span>救援 A <b>8</b></span><span>决斗 K <b>8</b></span><span>资源 J <b>8</b></span><span>资源 Q <b>8</b></span></div><p class="lab-note">J/Q/K 合计 24 张是上述牌的子集，不能再次计入总数。</p></aside>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow">SKILL INDEX</div><h2>30 个技能原文</h2></div><label class="search-box"><span>⌕</span><input id="skill-search" type="search" aria-label="搜索技能原文" placeholder="查找技能"></label></div>
+      <div id="skill-index"></div>
+    </section>
+
+    <section id="view-arena" class="view" aria-label="对局练习" hidden>
+      <div class="section-heading arena-heading"><div><div class="eyebrow">PRACTICE TABLE / 03</div><h2>先来一场，熟悉出牌。</h2></div><button class="secondary" id="reset-game">重新发牌 ↻</button></div>
+      <p class="arena-scope">双人基础牌练习：斗、防、决斗、救援、摸牌与弃牌。角色技能和正式阵营胜负尚未接入；这里演示交互，不代表 12 人对局平衡。</p>
+      <div class="arena-layout">
+        <div class="game-table">
+          <div class="table-status"><span id="round-label">练习回合 01</span><span id="deck-label"></span></div>
+          <div id="enemy-panel" class="combatant enemy-panel" data-faction="authority"></div>
+          <div class="table-center"><span class="table-monogram">1886</span><div id="battle-status" aria-live="polite"></div><div id="battle-cards"></div></div>
+          <div id="player-panel" class="combatant player-panel" data-faction="resist"></div>
+          <div class="hand-area"><div class="hand-label"><span>你的手牌 <b id="hand-count"></b></span><span id="hand-help"></span></div><div id="hand" class="hand"></div></div>
+          <div class="game-actions"><button class="secondary" id="cancel-card">取消选择</button><button class="primary" id="play-card">选择手牌</button><button class="secondary" id="end-turn">结束回合 →</button></div>
+        </div>
+        <aside class="game-sidebar"><h3>牌桌记录 <span>LIVE</span></h3><div id="game-log" class="game-log" aria-live="polite"></div><div class="game-tips"><h4>练习提示</h4><p>点击手牌，再确认出牌。对手会自动选择有效的防；其攻击时由你决定响应。</p><p>A 在练习中用于给自己治疗。K 发起决斗后需再选择一张斗。J / Q 保留作技能资源，可在弃牌阶段弃置。</p><p>开局是教学预设：双方 3 / 4 生命，各 6 张手牌；后续每轮摸 2，回合结束弃至 5。体力降为 0 即结束本次练习。</p></div></aside>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-brand">1886<span>阵营卡牌游戏</span></div><span>设定与初版插画来自 1886.xlsx · 十位角色已统一重绘 · 三阵营分色 · 试改建议待实测</span><button data-view="rules">阅读规则 ↗</button></footer>
+  <dialog id="role-dialog" aria-labelledby="detail-title"><button class="dialog-close" aria-label="关闭角色详情">×</button><div id="role-detail"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
